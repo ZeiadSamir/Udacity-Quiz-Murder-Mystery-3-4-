@@ -1,10 +1,6 @@
-# Udacity-Quiz-Murder-Mystery-3-4-
-Can you solve it ?
 
-
-/*
- * Programming Quiz: Murder Mystery (3-4)
- */
+* Programming Quiz: Murder Mystery (3-4)
+	*/
 
 /*
  * QUIZ REQUIREMENTS
@@ -23,21 +19,20 @@ Can you solve it ?
 // Change the value of `room` and `suspect` to test your code
 
 // A room can be either of - dining room, gallery, ballroom, or billiards room
+
+
 // A suspect can be either of - Mr. Parkes, Ms. Van Cleve, Mrs. Sparr, or Mr. Kalehoff
 // Test your code by giving matching as well as unmatching names of the suspect
 
 
-
-
 /* ****************************************** */
-
-var room = "gallery";
-var suspect = "Mr. Kalehoff" 
 
 /* IMPLEMENTATION LOGIC*/
 
 // Initial values
-var weapon = "trophy";
+var room = "billiards room";
+var suspect = "Mrs. Sparr"; 
+var weapon = "pool stick";
 var solved = false;
 
 /*
@@ -45,25 +40,32 @@ var solved = false;
 * 1. sets the value of weapon based on the room and
 * 2. sets the value of solved to true if the value of room matches the suspect's room
 */
-if (rooms === "billiards room" ) {
+if (room === 'billiards room') {
+    weapon = 'pool stick';
+    if(suspect==="Mrs. Sparr") 
+    solved = true;
+        
     
-  weapon = "pool stick", solved = true,  suspect = "Mrs. Sparr" ; 
     
-} else if (rooms === "dining room") {
-    
-    weapon = "knife", solved = true, suspect = "Mr. Parkes" ;
-    
-} else if (rooms === "gallery") {
-    
-     weapon = "trophy", solved = true, suspect = "Ms. Van Cleve";
-    
-} else {
-    
-   weapon = "poison" ,solved = true, suspect = "Mr. Kalehoff" ;
+} else if (room === 'ballroom') {
+            weapon = 'poison';
+            if(suspect==="Mr. Kalehoff") 
+            solved = true;
+        
+} else if (room === 'gallery') {
+            weapon = 'trophy';
+            if(suspect==="Ms. Van Cleve") 
+            solved = true;
+        
+}  else if (room === 'dining room') {
+            weapon = 'knife';
+            if(suspect==="Mr. Parkes") 
+            solved = true;
+        
 }
 /* ****************************************** */
 // The code below will run only when `solved` is true
 if (solved) {
-	console.log(suspect + " did it in the " + room +" with the " + weapon +"!");
+	console.log(suspect+" did it in the "+ room +" with the " + weapon +"!");
 }
 /* ****************************************** */
